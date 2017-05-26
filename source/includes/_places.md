@@ -294,10 +294,10 @@ If the default Skyscanner schema is not used, the schema name must be appended t
 
 ## Car Hire and Hotels
 
-Retrieve a list of hotels and/or geographical locations which can then be used witht the hotels and car hire APIs. In the case of car hire, use this if you want downtown (non-airport) searches.
+Retrieve a list of hotels and/or geographical locations which can then be used with the hotels and car hire APIs. In the case of car hire, use this if you want downtown (non-airport) searches.
 
 ```shell
-GET "http://partners.api.skyscanner.net/hotels/autosuggest/v2/{country}/{currency}/{locale}/{query}?
+GET "http://partners.api.skyscanner.net/apiservices/hotels/autosuggest/v2/{country}/{currency}/{locale}/{query}?
     apiKey={apiKey}"
 ```
 
