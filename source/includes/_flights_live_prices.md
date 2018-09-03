@@ -473,12 +473,20 @@ Please refer to our <a href="#response-codes">response codes</a> in case of unsu
 ### Request
 
 ```shell
-curl "http://partners.api.skyscanner.net/apiservices/pricing/uk1/v1.0/
-    {SessionKey}/booking/
-    {OutboundLegId};{InboundLegId}
+curl "http://partners.api.skyscanner.net/{URL returned in Location header}
     ?apiKey={apiKey}"
     -X GET
 ```
+
+<aside class="warning" name="booking-url-warning">
+Previous versions of the Flights Pricing API returned the same polling URL as the URL used to request booking details.
+
+This will change over the second half of 2018. We recommend you use the URL returned in the `Location` header and do not make assumptions on what the URL will be.
+
+If you have a working integration with the Flights Pricing API and your integration is not reading the polling URL from the `Location` header, you will need to update your integration.
+
+If you do not update your integration, polling the booking details for a session will fail at some point during the second half of 2018.
+</aside>
 
 *API endpoint*
 
