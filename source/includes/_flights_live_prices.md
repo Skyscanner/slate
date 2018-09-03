@@ -70,6 +70,7 @@ or go to our [test harness](http://business.skyscanner.net/portal/en-GB/Document
 | ```infants``` <br><span class="optional">OPTIONAL</span> | Number of infants (under 12 months). Can be between 0 and 8.  |
 | ```includeCarriers``` <br><span class="optional">OPTIONAL</span> | Only return results from those carriers. Comma-separated list of carrier ids.  |
 | ```excludeCarriers``` <br><span class="optional">OPTIONAL</span> | Filter out results from those carriers. Comma-separated list of carrier ids.  |
+| ```groupPricing``` <br><span class="optional">OPTIONAL</span> | Whether to obtain prices for one adult or for the whole passenger group. Possible values are `true` and `false`. Defaults to `false`. |
 | ```apiKey``` <br><span class="required">REQUIRED</span> | Your API Key. |
 
 
@@ -397,7 +398,7 @@ curl "http://partners.api.skyscanner.net/apiservices/pricing/v1.0/
     -H "Content-Type: application/x-www-form-urlencoded"
 ```
 
-For group pricing a Booking Details request must be made to get the deeplink with additional information such as number of passengers.
+If you set `groupPricing` to `false` when creating the session, a Booking Details request must be made to get the deeplink with additional information such as number of passengers.
 
 > The url is provided in the response of the live prices:
 
