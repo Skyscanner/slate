@@ -70,7 +70,7 @@ or go to our [test harness](http://business.skyscanner.net/portal/en-GB/Document
 | ```infants``` <br><span class="optional">OPTIONAL</span> | Number of infants (under 12 months). Can be between 0 and 8.  |
 | ```includeCarriers``` <br><span class="optional">OPTIONAL</span> | Only return results from those carriers. Comma-separated list of carrier ids.  |
 | ```excludeCarriers``` <br><span class="optional">OPTIONAL</span> | Filter out results from those carriers. Comma-separated list of carrier ids.  |
-| ```groupPricing``` <br><span class="optional">OPTIONAL</span> | Whether to obtain prices for one adult or for the whole passenger group. Possible values are `true` and `false`. Defaults to `false`. |
+| ```groupPricing``` <br><span class="optional">OPTIONAL</span> | If set to `true`, prices will be obtained for the whole passenger group and if set to `false` it will be obtained for one adult. By default it is set to `false`. |
 | ```apiKey``` <br><span class="required">REQUIRED</span> | Your API Key. |
 
 
