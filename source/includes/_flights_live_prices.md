@@ -479,8 +479,9 @@ curl "http://partners.api.skyscanner.net/{URL returned in Location header}
 ```
 
 <aside class="warning" name="booking-url-warning">
-<p>Previous versions of the Flights Pricing API returned the same polling URL as the URL used to request booking details.</p>
-
+Previous versions of the Flights Pricing API returned the same polling URL as the URL used to request booking details.
+<br/>
+<br/>
 <p>This will change over the second half of 2018. We recommend you use the URL returned in the <b>Location</b> header and do not make assumptions on what the URL will be.</p>
 
 <p>If you have a working integration with the Flights Pricing API and your integration is not reading the polling URL from the <b>Location</b> header, you will need to update your integration.</p>
