@@ -12,6 +12,7 @@ A schema definition for the carhire day-view microsite supported query parameter
 
 ## Carhire Day View supported query parameters Properties
 
+                      | any       | Additional | Yes      | this schema _allows_ additional properties                |
 | Property                      | Type      | Required     | Nullable | Defined by                                                |
 | ----------------------------- | --------- | ------------ | -------- | --------------------------------------------------------- |
 | [currency](#currency)         | `string`  | Optional     | No       | Carhire Day View supported query parameters (this schema) |

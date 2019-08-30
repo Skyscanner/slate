@@ -32,6 +32,7 @@ includes:
   - flights_airline
   - hotels_dayView
   - hotels_homeView
+  - hotels_hotelDetails
   - cars_dayView
   - cars_carsHome
   - response_codes

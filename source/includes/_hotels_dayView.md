@@ -22,7 +22,7 @@ A schema definition for the hotels day-view microsite supported query parameters
 | [locale](#locale)       | `string`  | Optional     | No       |                                            | Hotels Day View supported query parameters (this schema) |
 | [market](#market)       | `string`  | Optional     | No       |                                            | Hotels Day View supported query parameters (this schema) |
 | [rooms](#rooms)         | `integer` | Optional     | No       | `1`                                        | Hotels Day View supported query parameters (this schema) |
-| [sort](#sort)           | `string`  | Optional     | No       |                                            | Hotels Day View supported query parameters (this schema) |
+| [sort](#sort)           | `enum`    | Optional     | No       |                                            | Hotels Day View supported query parameters (this schema) |
 | `*`                     | any       | Additional   | Yes      | this schema _allows_ additional properties |
 
 ### adults
@@ -72,7 +72,7 @@ Checkout date in the formats: `YYYY-MM-DD`, `YYMMDD` or `YYYYMMDD`
 
 ### currency
 
-The desired currency for the hotels search results.
+The desired currency for the page
 
 `currency`
 
@@ -100,7 +100,7 @@ The id of the geo location for which the search will be performed.
 
 ### locale
 
-The desired locale for the hotels search results.
+The desired locale for the page
 
 `locale`
 
@@ -114,7 +114,7 @@ The desired locale for the hotels search results.
 
 ### market
 
-The market for which the hotels search will be performed.
+The market of the user
 
 `market`
 
@@ -150,9 +150,18 @@ Defines the order in which search results will appear. Options are: price, -pric
 `sort`
 
 - is optional
-- type: `string`
+- type: `enum`
 - defined in this schema
 
-#### sort Type
+The value of this property **must** be equal to one of the [known values below](#sort-known-values).
 
-`string`
+#### sort Known Values
+
+| Value      | Description |
+| ---------- | ----------- |
+| `price`    |             |
+| `-price`   |             |
+| `distance` |             |
+| `-rating`  |             |
+| `stars`    |             |
+| `-stars`   |             |

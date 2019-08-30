@@ -28,9 +28,9 @@ There is one main endpoint with the following URL structure:
 
 | Vertical | Pagetypes |
 | --------- | ------- |
-| flights | day-view, calendar-month-view, browse-view, multicity |
-| hotels | day-view |
-| cars | day-view |
+| flights | home, day-view, calendar-month-view, browse-view, multicity, booking-panel, cheap-flights-to, flights-airline |
+| hotels | day-view, home-view, hotel-details |
+| cars | home, day-view |
 
 An example including some of the parameters looks like:
 
