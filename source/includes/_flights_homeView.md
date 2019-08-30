@@ -8,7 +8,7 @@ A schema definition for the flights home page microsite supported path and query
 
 | Abstract            | Extensible | Status       | Identifiable | Custom Properties | Additional Properties | Defined In                                   |
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------------------- |
-| Can be instantiated | No         | Experimental | No           | Forbidden         | Permitted             | [flightsHomePage.json](flightsHomePage.json) |
+| Can be instantiated | No         | Experimental | No           | Forbidden         | Permitted             |                                              |
 
 ## Flights Home Page supported parameters Properties
 

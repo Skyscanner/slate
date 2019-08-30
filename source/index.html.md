@@ -33,6 +33,7 @@ includes:
   - hotels_dayView
   - hotels_homeView
   - cars_dayView
+  - cars_carsHome
   - response_codes
 search: false
 ---
