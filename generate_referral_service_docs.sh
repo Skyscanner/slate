@@ -17,6 +17,7 @@ sed s/^#/##/g ../referrals-api/src/utils/referral/flights/docs/calendarMonthView
 sed s/^#/##/g ../referrals-api/src/utils/referral/flights/docs/multiCity.md | sed s/[\\[\|\(][a-zA-Z]*City\.json[\]\|\)]//g > source/includes/_flights_multiCity.md
 sed s/^#/##/g ../referrals-api/src/utils/referral/flights/docs/flightsHomePage.md | sed s/[\\[\|\(][a-zA-Z]*View\.json[\]\|\)]//g > source/includes/_flights_homeView.md
 sed s/^#/##/g ../referrals-api/src/utils/referral/flights/docs/cheapFlightsTo.md | sed s/[\\[\|\(][a-zA-Z]*City\.json[\]\|\)]//g > source/includes/_flights_cheapFlightsTo.md
+sed s/^#/##/g ../referrals-api/src/utils/referral/flights/docs/flightsAirline.md | sed s/[\\[\|\(][a-zA-Z]*Airline\.json[\]\|\)]//g > source/includes/_flights_airline.md
 sed s/^#/##/g ../referrals-api/src/utils/referral/hotels/docs/dayView.md | sed s/[\\[\|\(][a-zA-Z]*View\.json[\]\|\)]//g > source/includes/_hotels_dayView.md
 sed s/^#/##/g ../referrals-api/src/utils/referral/hotels/docs/homeView.md | sed s/[\\[\|\(][a-zA-Z]*View\.json[\]\|\)]//g > source/includes/_hotels_homeView.md
 sed s/^#/##/g ../referrals-api/src/utils/referral/cars/docs/dayView.md | sed s/[\\[\|\(][a-zA-Z]*View\.json[\]\|\)]//g > source/includes/_cars_dayView.md
