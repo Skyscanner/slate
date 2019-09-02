@@ -12,14 +12,17 @@ A schema definition for the hotels home-view microsite supported query parameter
 
 ## Hotels Home View supported query parameters Properties
 
-| Property                                      | Type      | Required   | Nullable | Default                                    | Defined by                                                |
-| --------------------------------------------- | --------- | ---------- | -------- | ------------------------------------------ | --------------------------------------------------------- |
-| [adults](#adults)                             | `integer` | Optional   | No       | `2`                                        | Hotels Home View supported query parameters (this schema) |
-| [checkin](#checkin)                           | `string`  | Optional   | No       |                                            | Hotels Home View supported query parameters (this schema) |
-| [checkout](#checkout)                         | `string`  | Optional   | No       |                                            | Hotels Home View supported query parameters (this schema) |
-| [rooms](#rooms)                               | `integer` | Optional   | No       | `1`                                        | Hotels Home View supported query parameters (this schema) |
-| [skyscanner_node_code](#skyscanner_node_code) | `string`  | Optional   | No       |                                            | Hotels Home View supported query parameters (this schema) |
-| `*`                                           | any       | Additional | Yes      | this schema _allows_ additional properties |
+| Property                                      | Type      | Required   | Nullable | Defined by                                                |
+| --------------------------------------------- | --------- | ---------- | -------- | --------------------------------------------------------- |
+| [adults](#adults)                             | `integer` | Optional   | No       | Hotels Home View supported query parameters (this schema) |
+| [checkin](#checkin)                           | `string`  | Optional   | No       | Hotels Home View supported query parameters (this schema) |
+| [checkout](#checkout)                         | `string`  | Optional   | No       | Hotels Home View supported query parameters (this schema) |
+| [currency](#currency)                         | `string`  | Optional   | No       | Hotels Home View supported query parameters (this schema) |
+| [locale](#locale)                             | `string`  | Optional   | No       | Hotels Home View supported query parameters (this schema) |
+| [market](#market)                             | `string`  | Optional   | No       | Hotels Home View supported query parameters (this schema) |
+| [rooms](#rooms)                               | `integer` | Optional   | No       | Hotels Home View supported query parameters (this schema) |
+| [skyscanner_node_code](#skyscanner_node_code) | `string`  | Optional   | No       | Hotels Home View supported query parameters (this schema) |
+| `*`                                           | any       | Additional | Yes      | this schema _allows_ additional properties                |
 
 ### adults
 
@@ -29,14 +32,11 @@ Number of adults. Adults number should be greater than or equal to the rooms num
 
 - is optional
 - type: `integer`
-- default: `2`
 - defined in this schema
 
 #### adults Type
 
 `integer`
-
-- minimum value: `1`
 
 ### checkin
 
@@ -66,6 +66,48 @@ Checkout date in the formats: `YYYY-MM-DD`, `YYMMDD` or `YYYYMMDD`.
 
 `string`
 
+### currency
+
+The desired currency for the page
+
+`currency`
+
+- is optional
+- type: `string`
+- defined in this schema
+
+#### currency Type
+
+`string`
+
+### locale
+
+The desired locale for the page
+
+`locale`
+
+- is optional
+- type: `string`
+- defined in this schema
+
+#### locale Type
+
+`string`
+
+### market
+
+The market of the user
+
+`market`
+
+- is optional
+- type: `string`
+- defined in this schema
+
+#### market Type
+
+`string`
+
 ### rooms
 
 Number of rooms. Rooms number should be less than or equal to the adults number.
@@ -74,14 +116,11 @@ Number of rooms. Rooms number should be less than or equal to the adults number.
 
 - is optional
 - type: `integer`
-- default: `1`
 - defined in this schema
 
 #### rooms Type
 
 `integer`
-
-- minimum value: `1`
 
 ### skyscanner_node_code
 
