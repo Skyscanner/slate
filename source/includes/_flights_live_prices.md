@@ -139,7 +139,7 @@ or go to our [test harness](https://business.skyscanner.net/portal/en-GB/Documen
 | --------- | ------- |
 | ```sortType``` <br><span class="optional">OPTIONAL</span> | The parameter to sort results on. Can be carrier, duration, outboundarrivetime, outbounddeparttime, inboundarrivetime, inbounddeparttime, price |
 | ```sortOrder``` <br><span class="optional">OPTIONAL</span> | The sort order. 'asc' or 'desc' |
-| ```duration``` <br><span class="optional">OPTIONAL</span> | Filter for maximum duration in minutes. Integer between 0 and 1800  |
+| ```duration``` <br><span class="optional">OPTIONAL</span> | An integer value representing the total duration in minutes of the outbound leg and inbound leg (in case of return flights). Bear in mind that if the value is set too low it might filter out all flights from the response or if it’s too high it might simply return all flights with no filtering applied  |
 | ```includeCarriers``` <br><span class="optional">OPTIONAL</span> | Filter flights by the specified carriers. Must be semicolon-separated [IATA codes](http://www.iata.org/publications/Pages/code-search.aspx). |
 | ```excludeCarriers``` <br><span class="optional">OPTIONAL</span> | Filter flights by any but the specified carriers. Must be semicolon-separated [IATA codes](http://www.iata.org/publications/Pages/code-search.aspx). |
 | ```originAirports``` <br><span class="optional">OPTIONAL</span> | Origin airports to filter on. List of airport codes delimited by ‘;’  |
