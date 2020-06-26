@@ -4,6 +4,14 @@
 /flights/browse-view
 ```
 
+A schema definition for the flights browse view microsite supported parameters
+
+| Abstract            | Extensible | Status       | Identifiable | Custom Properties | Additional Properties | Defined In                         |
+| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | ---------------------------------- |
+| Can be instantiated | No         | Experimental | No           | Forbidden         | Permitted             |  |
+
+## Flights Browse View supported parameters Properties
+
 | Property                        | Type      | Required     | Nullable | Defined by                                             |
 | ------------------------------- | --------- | ------------ | -------- | ------------------------------------------------------ |
 | [adultsv2](#adultsv2)           | `integer` | Optional     | No       | Flights Browse View supported parameters (this schema) |
@@ -55,8 +63,7 @@ passenger
 
 ### currency
 
-The desired currency for the page. Examples: GBP, EUR, USD  
-Please try to avoid using `locale`, `market` and `currency`, as these values will be governed by Skyscanner market detection logic on the Skyscanner site. If you believe you need to use these, please discuss with your account manager.
+The desired currency for the page. Examples: GBP, EUR, USD
 
 `currency`
 
@@ -126,8 +133,7 @@ Arrival date in the format: YYYY-MM
 
 ### locale
 
-The desired locale for the page. Examples: es-ES, en-GB, ru-RU  
-Please try to avoid using `locale`, `market` and `currency`, as these values will be governed by Skyscanner market detection logic on the Skyscanner site. If you believe you need to use these, please discuss with your account manager.
+The desired locale for the page. Examples: es-ES, en-GB, ru-RU
 
 `locale`
 
@@ -141,8 +147,7 @@ Please try to avoid using `locale`, `market` and `currency`, as these values wil
 
 ### market
 
-The market of the user. Examples: UK, US, ES  
-Please try to avoid using `locale`, `market` and `currency`, as these values will be governed by Skyscanner market detection logic on the Skyscanner site. If you believe you need to use these, please discuss with your account manager.
+The market of the user. Examples: UK, US, ES
 
 `market`
 
