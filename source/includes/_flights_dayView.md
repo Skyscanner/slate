@@ -12,15 +12,21 @@ A schema definition for the flights day-view microsite supported parameters
 
 ## Flights Day View supported parameters Properties
 
+For more details, please see our [Examples](#examples) 
+
 | Property                                            | Type       | Required     | Nullable | Default                                    | Defined by                                          |
 | --------------------------------------------------- | ---------- | ------------ | -------- | ------------------------------------------ | --------------------------------------------------- |
 | [adultsv2](#adultsv2)                               | `integer`  | **Required** | No       | `1`                                        | Flights Day View supported parameters (this schema) |
+| [airlines](#airlines)                               | `string`   | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
+| [alliances](#alliances)                             | `string`   | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
 | [alternativedestinations](#alternativedestinations) | `string[]` | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
 | [alternativeorigins](#alternativeorigins)           | `string[]` | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
 | [cabinclass](#cabinclass)                           | `enum`     | **Required** | No       | `"economy"`                                | Flights Day View supported parameters (this schema) |
 | [childrenv2](#childrenv2)                           | `string`   | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
 | [currency](#currency)                               | `string`   | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
+| [departure-times](#departure-times)                 | `string`   | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
 | [destination](#destination)                         | `string`   | **Required** | No       |                                            | Flights Day View supported parameters (this schema) |
+| [duration](#duration)                               | `integer`  | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
 | [inboundDate](#inbounddate)                         | `string`   | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
 | [inboundaltsenabled](#inboundaltsenabled)           | `boolean`  | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
 | [infants](#infants)                                 | `integer`  | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
@@ -30,7 +36,9 @@ A schema definition for the flights day-view microsite supported parameters
 | [outboundDate](#outbounddate)                       | `string`   | **Required** | No       |                                            | Flights Day View supported parameters (this schema) |
 | [outboundaltsenabled](#outboundaltsenabled)         | `boolean`  | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
 | [preferDirects](#preferdirects)                     | `boolean`  | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
+| [showDirectDays](#showdirectdays)                   | `boolean`  | Optional     | No       | `true`                                     | Flights Day View supported parameters (this schema) |
 | [rtn](#rtn)                                         | `enum`     | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
+| [sortby](#sortby)                                   | `enum`     | Optional     | No       |                                            | Flights Day View supported parameters (this schema) |
 | `*`                                                 | any        | Additional   | Yes      | this schema _allows_ additional properties |
 
 ### adultsv2
@@ -49,6 +57,36 @@ Number of adult passengers. Adults have to be 16 years old or older.
 `integer`
 
 - minimum value: `1`
+
+### airlines
+
+List of comma separated IATA carrier codes to be passed to the dayview filters. For example: &airlines=AA,KL,LH. To
+unselect airline from the filters, the code must be specified with exclamation mark. For example: &airlines=AA,!KL,!LH  
+You can search for IATA airline codes at the IATA website [here](https://www.iata.org/publications/pages/code-search.aspx)
+
+`airlines`
+
+- is optional
+- type: `string`
+- defined in this schema
+
+#### airlines Type
+
+`string`
+
+### alliances
+
+Comma separated list of alliance names passed to the dayview filters. For example: &alliances=oneworld,Star%20Alliance
+
+`alliances`
+
+- is optional
+- type: `string`
+- defined in this schema
+
+#### alliances Type
+
+`string`
 
 ### alternativedestinations
 
@@ -121,6 +159,9 @@ passenger
 
 ### currency
 
+The desired currency for the page. Examples: GBP, EUR, USD  
+Please try to avoid using `locale`, `market` and `currency`, as these values will be governed by Skyscanner market detection logic on the Skyscanner site. If you believe you need to use these, please discuss with your account manager.
+
 The desired currency for the page. Examples: GBP, EUR, USD
 
 `currency`
@@ -130,6 +171,21 @@ The desired currency for the page. Examples: GBP, EUR, USD
 - defined in this schema
 
 #### currency Type
+
+`string`
+
+### departure-times
+
+Sets the dayview departure time filters in minutes. For example: &departure-times=00-90,30-990 (first leg departs
+between 00 and 1:30 and second leg departs between 00:30 and 16:30).
+
+`departure-times`
+
+- is optional
+- type: `string`
+- defined in this schema
+
+#### departure-times Type
 
 `string`
 
@@ -146,6 +202,20 @@ Location code for the destination
 #### destination Type
 
 `string`
+
+### duration
+
+Sets the dayview duration filters in minutes. For example: &duration=1320 (22 hours)
+
+`duration`
+
+- is optional
+- type: `integer`
+- defined in this schema
+
+#### duration Type
+
+`integer`
 
 ### inboundDate
 
@@ -191,7 +261,8 @@ Number of infant passengers. An infant is 1 year old or younger.
 
 ### locale
 
-The desired locale for the page. Examples: es-ES, en-GB, ru-RU
+The desired locale for the page. Examples: es-ES, en-GB, ru-RU  
+Please try to avoid using `locale`, `market` and `currency`, as these values will be governed by Skyscanner market detection logic on the Skyscanner site. If you believe you need to use these, please discuss with your account manager.
 
 `locale`
 
@@ -206,6 +277,7 @@ The desired locale for the page. Examples: es-ES, en-GB, ru-RU
 ### market
 
 The market of the user. Examples: UK, US, ES
+Please try to avoid using `locale`, `market` and `currency`, as these values will be governed by Skyscanner market detection logic on the Skyscanner site. If you believe you need to use these, please discuss with your account manager.
 
 `market`
 
@@ -273,6 +345,20 @@ Will search only for direct flights if the value is true
 
 `boolean`
 
+### showDirectDays
+
+Controls the visibility of the day view screen, which presents the user with options for different dates with direct flights, when there are no direct flights for the currently selected dates.
+
+`showDirectDays`
+
+- is optional
+- type: `boolean`
+- defined in this schema
+
+#### showDirectDays Type
+
+`boolean`
+
 ### rtn
 
 Trip type: 0 if oneway or 1 if return or multicity trip
@@ -291,3 +377,23 @@ The value of this property **must** be equal to one of the [known values below](
 | ----- | ----------- |
 | `0`   |             |
 | `1`   |             |
+
+### sortby
+
+Sets the sorting order for the results. Possible values are: best, cheapest and fastest.
+
+`sortby`
+
+- is optional
+- type: `enum`
+- defined in this schema
+
+The value of this property **must** be equal to one of the [known values below](#sortby-known-values).
+
+#### sortby Known Values
+
+| Value      | Description |
+| ---------- | ----------- |
+| `best`     |             |
+| `cheapest` |             |
+| `fastest`  |             |

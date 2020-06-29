@@ -4,14 +4,6 @@
 /flights/multicity
 ```
 
-A schema definition for the flights day-view microsite supported query parameters
-
-| Abstract            | Extensible | Status       | Identifiable | Custom Properties | Additional Properties | Defined In                       |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------- |
-| Can be instantiated | No         | Experimental | No           | Forbidden         | Permitted             |  |
-
-## Flights Day View for multicity search Properties
-
 | Property                      | Type      | Required     | Nullable | Default                                    | Defined by                                          |
 | ----------------------------- | --------- | ------------ | -------- | ------------------------------------------ | --------------------------------------------------- |
 | [adultsv2](#adultsv2)         | `integer` | **Required** | No       | `1`                                        | Flights Day View for multicity search (this schema) |
@@ -97,7 +89,8 @@ passenger
 
 ### currency
 
-The desired currency for the page. Examples: GBP, EUR, USD
+The desired currency for the page. Examples: GBP, EUR, USD  
+Please try to avoid using `locale`, `market` and `currency`, as these values will be governed by Skyscanner market detection logic on the Skyscanner site. If you believe you need to use these, please discuss with your account manager.
 
 `currency`
 
@@ -293,7 +286,8 @@ Number of infant passengers. An infant is 1 year old or younger.
 
 ### locale
 
-The desired locale for the page. Examples: es-ES, en-GB, ru-RU
+The desired locale for the page. Examples: es-ES, en-GB, ru-RU  
+Please try to avoid using `locale`, `market` and `currency`, as these values will be governed by Skyscanner market detection logic on the Skyscanner site. If you believe you need to use these, please discuss with your account manager.
 
 `locale`
 
@@ -307,7 +301,8 @@ The desired locale for the page. Examples: es-ES, en-GB, ru-RU
 
 ### market
 
-The market of the user. Examples: UK, US, ES
+The market of the user. Examples: UK, US, ES  
+Please try to avoid using `locale`, `market` and `currency`, as these values will be governed by Skyscanner market detection logic on the Skyscanner site. If you believe you need to use these, please discuss with your account manager.
 
 `market`
 

@@ -35,8 +35,8 @@ GET "http://partners.api.skyscanner.net/apiservices/
 
 | Parameter | Description |
 | --------- | ----------- |
-| ```market``` <br><span class="required">REQUIRED</span> | The required market. Example values: `bg`, `uk`, `es`, etc. |
-| ```locale``` <br><span class="required">REQUIRED</span> | The required locale. Example values: `en-GB`, `en-US`, `bg-BG`, etc. |
+| ```market``` <br><span class="required">REQUIRED</span> | The required [market/country](#markets). Example values: `bg`, `uk`, `es`, etc. |
+| ```locale``` <br><span class="required">REQUIRED</span> | The required [locale](#locales). Example values: `en-GB`, `en-US`, `bg-BG`, etc. |
 | ```origin``` <br><span class="required">REQUIRED</span> | The required origin in DDBID form. Example values: `95673668`, `95673503`, `95565050`, etc. Could be either a City DDBID or an Airport DDBID. If Airport then it provides Deals from just that Airport. If City then it provides Deals from Airports in that City.|
 
 *REQUEST PARAMETERS*
@@ -46,7 +46,7 @@ GET "http://partners.api.skyscanner.net/apiservices/
 | ```limit``` <br><span class="optional">OPTIONAL</span> | The number of Deals to be returned. Example values: `1`, `10`, `15`, etc. |
 | ```start_date``` <br><span class="optional">OPTIONAL</span> | The start date for which to get Deals. Date format: `DD-MM-YYYY`. Example values: `23-12-2020`, `03-05-2021`, `31-01-2022`. If both `start_date` and `end_date` are not provided, the date range for which Deals are returned by default is "the next 90 days".|
 | ```end_date``` <br><span class="optional">OPTIONAL</span> | The end date for which to get Deals. Date format: `DD-MM-YYYY`. Example values: `23-12-2020`, `03-05-2021`, `31-01-2022`. If both `start_date` and `end_date` are not provided, the date range for which Deals are returned by default is "the next 90 days".|
-| ```currency``` <br><span class="optional">OPTIONAL</span> | The currency which you want the returned Deals to be in. Currency format: `ISO4217` Example values: `EUR`, `GBP`, `BGN`. If no currency is provided, the market default is applied. |
+| ```currency``` <br><span class="optional">OPTIONAL</span> | The [currency](#currencies) which you want the returned Deals to be in. Currency format: `ISO4217` Example values: `EUR`, `GBP`, `BGN`. If no currency is provided, the market default is applied. |
 | ```sorting``` <br><span class="optional">OPTIONAL</span> | The way the returned list of Deals is sorted. Possible values are: `NONE` and `SHUFFLE`. By default is `NONE`. |
 
 ```json
@@ -80,47 +80,18 @@ GET "http://partners.api.skyscanner.net/apiservices/
 
 | Parameter | Description |
 | --- | --- |
-| ```Places``` | Contains the list of markets (array of countries as name-value pairs). |
-
-
-## Place Information
-
-```shell
-GET "http://partners.api.skyscanner.net/apiservices/
-    autosuggest/v1.0/
-     `{market}`/
-     `{currency}`/
-      `{locale}`?
-    id={place_id}&
-    apiKey={apiKey}"
-```
-
-*REQUEST PARAMETERS*
-
-| Parameter | Description |
-| --------- | ------- |
-| ```id``` <br><span class="required">REQUIRED</span> | The place id. |
-| ```apiKey``` <br><span class="required">REQUIRED</span> | The API Key to identify the customer (could be full or short). |
-
-> Example response for id=cdg
-
-```json
-{
-  "Places": [
-    {
-      "PlaceId": "CDG-sky",
-      "PlaceName": "Paris Charles de Gaulle",
-      "CountryId": "FR-sky",
-      "CityId": "PARI-sky",
-      "CountryName": "France"
-    }
-  ]
-}
-```
-
-
-*RESPONSE PARAMETERS*
-
-| Parameter | Description |
-| --- | --- |
-| ```Places``` | Contains the information about the place such as name (in chosen locale), city, country. |
+| ```inboundDuration``` | Contains the information for the inbound flight duration in human readable format. |
+| ```outboundDuration``` | Contains the information for the outbound flight duration in human readable format. |
+| ```origin``` | IATA code of the origin airport. |
+| ```destination``` | IATA code of the destination airport. |
+| ```inboundSegments``` | The number of segments for the inbound flight. |
+| ```outboundSegments``` | The number of segments for the outbound flight. |
+| ```inboundDepartureDate``` | The departure date of the inbound flight in `YYYY-mm-dd` format. |
+| ```outboundDepartureDate``` | The departure date of the outbound flight in `YYYY-mm-dd` format. |
+| ```price``` | The total price of the Deal. |
+| ```currency``` | The currency for the price of the Deal. |
+| ```referralLink``` | The referral link for the Deal. |
+| ```imageUrl``` | The image url for the Deal. |
+| ```airlines``` | A list of airlines included in the Deal. |
+| ```tripDuration``` | The duration of the whole trip in human readable format. |
+| ```quoteTimestamp``` | The timestamp for the quote. |
