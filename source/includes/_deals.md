@@ -37,7 +37,7 @@ GET "http://partners.api.skyscanner.net/apiservices/
 | --------- | ----------- |
 | ```market``` <br><span class="required">REQUIRED</span> | The required [market/country](#markets). Example values: `bg`, `uk`, `es`, etc. |
 | ```locale``` <br><span class="required">REQUIRED</span> | The required [locale](#locales). Example values: `en-GB`, `en-US`, `bg-BG`, etc. |
-| ```origin``` <br><span class="required">REQUIRED</span> | The required origin in DDBID form. Example values: `95673668`, `95673503`, `95565050`, etc. Could be either a City DDBID or an Airport DDBID. If Airport then it provides Deals from just that Airport. If City then it provides Deals from Airports in that City.|
+| ```origin``` <br><span class="required">REQUIRED</span> | The required origin in IATA form. Example values: `EDI`, `LHR`, `SOF`, etc. Could be either a City code (for example EDIN for Edinburgh, LOND for London, etc) or an Airport IATA code. If Airport then it provides Deals from just that Airport. If City then it provides Deals from Airports in that City.|
 
 *REQUEST PARAMETERS*
 
@@ -59,7 +59,7 @@ GET "http://partners.api.skyscanner.net/apiservices/
     "inboundSegments": 2,
     "inboundDepartureDate": "2020-11-08",
     "price": 408,
-    "referralLink": "http://localhost:3000/v1/flights/deals?origin=LHR&destination=NRT&outboundDate=2020-10-25&dealId=39227272e9844b6283cc2808e497c686&inboundDate=2020-11-08",
+    "referralLink": "https://skyscanner.net/g/referrals/v1/flights/deals?origin=LHR&destination=NRT&outboundDate=2020-10-25&dealId=39227272e9844b6283cc2808e497c686&inboundDate=2020-11-08",
     "imageUrl": "https://content.skyscnr.com/99b6d376df86c55006e1ca90a18c5902/GettyImages-479490111.jpg",
     "airlines": [
       "Iberia",
@@ -90,7 +90,7 @@ GET "http://partners.api.skyscanner.net/apiservices/
 | ```outboundDepartureDate``` | The departure date of the outbound flight in `YYYY-mm-dd` format. |
 | ```price``` | The total price of the Deal. |
 | ```currency``` | The currency for the price of the Deal. |
-| ```referralLink``` | The referral link for the Deal. |
+| ```referralLink``` | The referral link for the Deal. Please append your Associate ID query parameter (`&associateId=`) to the URL. |
 | ```imageUrl``` | The image url for the Deal. |
 | ```airlines``` | A list of airlines included in the Deal. |
 | ```tripDuration``` | The duration of the whole trip in human readable format. |
