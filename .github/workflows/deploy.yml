@@ -22,6 +22,7 @@ jobs:
         path: vendor/bundle
         key: gems-${{ runner.os }}-${{ env.ruby-version }}-${{ hashFiles('**/Gemfile.lock') }}
 
+    - run: gem install ffi -- --disable-system-libffi
     - run: bundle config set deployment 'true'
     - run: bundle install
 
