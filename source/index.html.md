@@ -32,6 +32,7 @@ includes:
   - flights_airline
   - cars_dayView
   - cars_carsHome
+  - deals
   - response_codes
   - HTTPS_migration_guide
 search: false
