@@ -44,6 +44,12 @@ config[:startdate]
 set :enddate, (first_day_of_month + 6).strftime("%y%m%d")
 config[:enddate]
 
+set :fullstartdate, (first_day_of_month).strftime("%Y-%m-%d")
+config[:fullstartdate]
+
+set :fullenddate, (first_day_of_month + 6).strftime("%Y-%m-%d")
+config[:fullenddate]
+
 set :startmonth, (first_day_of_month).strftime("%y%m")
 config[:startmonth]
 
