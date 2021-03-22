@@ -35,6 +35,22 @@ activate :autoprefixer do |config|
   config.inline   = true
 end
 
+# Global Variables
+next_month = Date.today.next_month
+first_day_of_month = Date.new(next_month.year, next_month.mon, 1)
+set :startdate, (first_day_of_month).strftime("%y%m%d")
+config[:startdate]
+
+set :enddate, (first_day_of_month + 6).strftime("%y%m%d")
+config[:enddate]
+
+set :startmonth, (first_day_of_month).strftime("%y%m")
+config[:startmonth]
+
+set :endmonth, (first_day_of_month).strftime("%y%m")
+config[:endmonth]
+
+
 # Github pages require relative links
 activate :relative_assets
 set :relative_links, true
