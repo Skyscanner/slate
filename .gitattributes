@@ -1,2 +1,1 @@
 source/javascripts/lib/* linguist-vendored
-*.md.erb            text diff=markdown
